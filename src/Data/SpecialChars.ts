@@ -16,9 +16,23 @@ const specialCharList: specialCharStruct[] = [
   {
     id: 0,
     content: " ",
-    title: "Space",
-    description: "A space character",
+    title: "半角スペース",
+    description: "The スペースです。",
     category: [SpecialCharType.space_like],
+  },
+  {
+    id: 1,
+    content: "　",
+    title: "全角スペース",
+    description: "日本語文字と同じサイズのスペースです。",
+    category: [SpecialCharType.space_like],
+  },
+  {
+    id: 100,
+    content: "🥺",
+    title: "ぴえん",
+    description: "JK大好き、ぴえんの絵文字です。",
+    category: [SpecialCharType.emoji],
   },
 ];
 
