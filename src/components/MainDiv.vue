@@ -65,6 +65,9 @@ export default defineComponent({
   align-items: center;
   margin: 0 auto;
   width: 100%;
+  @include mq(tb) {
+    max-width: 80%;
+  }
 }
 
 .charUnit {
@@ -81,15 +84,56 @@ export default defineComponent({
     padding: 10px;
   }
   @include mq(sb) {
-    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+    grid-template-columns: 200px 100px 100px;
+    grid-template-rows: 50px;
+    * {
+      margin: 0 1rem;
+    }
+    .description {
+      display: none;
+    }
+    button {
+      color: #fff;
+      background-color: #0d6efd;
+      border-color: #0d6efd;
+      cursor: pointer;
+      &.copied {
+        font-family: "Consolas";
+        letter-spacing: 1px;
+        background-color: purple;
+        border-color: rgb(150, 15, 150);
+      }
+    }
   }
   @include mq(tb) {
-    grid-template-columns: auto;
+    margin: 0 auto;
+    grid-template-columns: 200px 100px 100px;
+    grid-template-rows: 50px;
+    * {
+      margin: 0 1rem;
+    }
+    .description {
+      display: none;
+    }
+    button {
+      color: #fff;
+      background-color: #0d6efd;
+      border-color: #0d6efd;
+      cursor: pointer;
+      &.copied {
+        font-family: "Consolas";
+        letter-spacing: 1px;
+        background-color: purple;
+        border-color: rgb(150, 15, 150);
+      }
+    }
   }
   @include mq(fb) {
     max-width: 1000px;
     margin: 0 auto;
     grid-template-columns: 200px 500px 100px 100px;
+    grid-template-rows: 50px;
     * {
       margin: 0 1rem;
     }
