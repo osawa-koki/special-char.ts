@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "vue.volar",
+        "editorconfig.editorconfig",
+        "mhutchie.git-graph",
+        "github.copilot",
+        "eamodio.gitlens",
+        "davidanson.vscode-markdownlint"
+    ]
+}
