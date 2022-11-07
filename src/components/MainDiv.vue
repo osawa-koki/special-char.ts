@@ -65,6 +65,9 @@ export default defineComponent({
   align-items: center;
   margin: 0 auto;
   width: 100%;
+  @include mq(sb) {
+    max-width: 80%;
+  }
   @include mq(tb) {
     max-width: 80%;
   }
@@ -85,15 +88,27 @@ export default defineComponent({
   }
   @include mq(sb) {
     margin: 0 auto;
-    grid-template-columns: 200px 100px 100px;
-    grid-template-rows: 50px;
+    grid-template-columns: 100px 100px;
+    grid-template-rows: 50px 50px;
     * {
       margin: 0 1rem;
+    }
+    .title {
+      grid-column: 1 / 3;
+      grid-row: 1 / 2;
+    }
+    .content {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+    .copy {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
     }
     .description {
       display: none;
     }
-    button {
+    .copy {
       color: #fff;
       background-color: #0d6efd;
       border-color: #0d6efd;
