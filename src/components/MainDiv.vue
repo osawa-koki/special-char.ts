@@ -130,10 +130,11 @@ export default defineComponent({
     color: #fff;
     background-color: #0d6efd;
     border-color: #0d6efd;
+    letter-spacing: 0.5px;
     cursor: pointer;
     &.copied {
       font-family: "Consolas";
-      letter-spacing: 1px;
+      letter-spacing: 0.7px;
       background-color: purple;
       border-color: rgb(150, 15, 150);
     }
