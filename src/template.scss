@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+$sbtb: 540;
+$tbfb: 1024;
+
+$breakpoint: (
+  sb: "screen and (max-width: #{$sbtb}px)",
+  tb: "screen and (min-width: #{$sbtb + 1}px)",
+  fb: "screen and (min-width: #{$tbfb}px)",
+);
+
+@mixin mq($bp) {
+  @media #{map-get($breakpoint, $bp)} {
+    @content;
+  }
+}

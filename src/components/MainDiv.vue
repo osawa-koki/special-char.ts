@@ -28,26 +28,20 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-@charset "UTF-8";
-
-$sbtb: 540;
-$tbfb: 1024;
-
-$breakpoint: (
-  sb: "screen and (max-width: #{$sbtb}px)",
-  tb: "screen and (min-width: #{$sbtb + 1}px)",
-  fb: "screen and (min-width: #{$tbfb}px)",
-);
-
-@mixin mq($bp) {
-  @media #{map-get($breakpoint, $bp)} {
-    @content;
-  }
-}
+@import "@/template.scss";
 
 // ==============================
 
 .charUnit {
+  @include mq(sb) {
+    background-color: salmon;
+  }
+  @include mq(tb) {
+    background-color: yellow;
+  }
+  @include mq(fb) {
+    background-color: lightblue;
+  }
   .title {
     font-size: 1.2rem;
   }
