@@ -4,7 +4,7 @@
       <div v-for="item in items" :key="item.id" class="charUnit">
         <div class="title">{{ item.title }}</div>
         <div class="description">{{ item.description }}</div>
-        <input type="text" v-model="item.content" class="content" />
+        <textarea type="text" v-model="item.content" class="content" readonly />
         <button class="copy" @click="doCopy">copy♪</button>
       </div>
     </div>
@@ -34,9 +34,10 @@ export default defineComponent({
       // 自分自身を取得
       const targetElement = event.target as HTMLButtonElement;
       // エラートラップ
-      const input = targetElement.previousElementSibling as HTMLInputElement;
-      input.select();
-      const content = input.value;
+      const textarea =
+        targetElement.previousElementSibling as HTMLTextAreaElement;
+      textarea.select();
+      const content = textarea.value;
       if (content == null) return;
       // コピーされました！というメッセージを表示する
       this.copyToClipboard(content);
@@ -46,7 +47,7 @@ export default defineComponent({
         targetElement.classList.remove("copied");
         targetElement.textContent = "copy♪";
         window.getSelection()?.removeAllRanges();
-      }, 1000);
+      }, 700);
     },
   },
 });
@@ -126,7 +127,11 @@ export default defineComponent({
   * {
     margin: 0 1rem;
   }
-  button {
+  .content {
+    resize: none;
+    overflow: hidden;
+  }
+  .copy {
     color: #fff;
     background-color: #0d6efd;
     border-color: #0d6efd;
