@@ -5,8 +5,8 @@ $tbfb: 1024;
 
 $breakpoint: (
   sb: "screen and (max-width: #{$sbtb}px)",
-  tb: "screen and (min-width: #{$sbtb + 1}px)",
-  fb: "screen and (min-width: #{$tbfb}px)",
+  tb: "screen and (min-width: #{$sbtb + 1}px) and (max-width: #{$tbfb}px)",
+  fb: "screen and (min-width: #{$tbfb + 1}px)",
 );
 
 @mixin mq($bp) {
