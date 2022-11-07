@@ -1,8 +1,10 @@
 <template>
   <main>
-    <div v-for="item in items" :key="item.id">
-      <h2>{{ item.title }}</h2>
-      <p>{{ item.content }}</p>
+    <div v-for="item in items" :key="item.id" class="charUnit">
+      <div class="title">{{ item.title }}</div>
+      <div class="content">{{ item.content }}</div>
+      <div class="description">{{ item.description }}</div>
+      <button class="copy">コピー♪</button>
     </div>
   </main>
 </template>
@@ -25,20 +27,29 @@ export default defineComponent({
 });
 </script>
 
-<style>
-header {
-  background-color: lightpink;
-  text-align: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+<style lang="scss">
+@charset "UTF-8";
+
+$sbtb: 540;
+$tbfb: 1024;
+
+$breakpoint: (
+  sb: "screen and (max-width: #{$sbtb}px)",
+  tb: "screen and (min-width: #{$sbtb + 1}px)",
+  fb: "screen and (min-width: #{$tbfb}px)",
+);
+
+@mixin mq($bp) {
+  @media #{map-get($breakpoint, $bp)} {
+    @content;
+  }
 }
-header h1 {
-  font-size: 20px;
+
+// ==============================
+
+.charUnit {
+  .title {
+    font-size: 1.2rem;
+  }
 }
 </style>
