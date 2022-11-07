@@ -5,7 +5,7 @@
         <div class="title">{{ item.title }}</div>
         <div class="description">{{ item.description }}</div>
         <input type="text" v-model="item.content" class="content" />
-        <button class="copy" @click="doCopy">コピー♪</button>
+        <button class="copy" @click="doCopy">copy♪</button>
       </div>
     </div>
   </main>
@@ -44,7 +44,7 @@ export default defineComponent({
       targetElement.textContent = "copied!";
       setTimeout(() => {
         targetElement.classList.remove("copied");
-        targetElement.textContent = "コピー♪";
+        targetElement.textContent = "copy♪";
         window.getSelection()?.removeAllRanges();
       }, 1000);
     },
@@ -108,40 +108,13 @@ export default defineComponent({
     .description {
       display: none;
     }
-    .copy {
-      color: #fff;
-      background-color: #0d6efd;
-      border-color: #0d6efd;
-      cursor: pointer;
-      &.copied {
-        font-family: "Consolas";
-        letter-spacing: 1px;
-        background-color: purple;
-        border-color: rgb(150, 15, 150);
-      }
-    }
   }
   @include mq(tb) {
     margin: 0 auto;
     grid-template-columns: 200px 100px 100px;
     grid-template-rows: 50px;
-    * {
-      margin: 0 1rem;
-    }
     .description {
       display: none;
-    }
-    button {
-      color: #fff;
-      background-color: #0d6efd;
-      border-color: #0d6efd;
-      cursor: pointer;
-      &.copied {
-        font-family: "Consolas";
-        letter-spacing: 1px;
-        background-color: purple;
-        border-color: rgb(150, 15, 150);
-      }
     }
   }
   @include mq(fb) {
@@ -149,20 +122,20 @@ export default defineComponent({
     margin: 0 auto;
     grid-template-columns: 200px 500px 100px 100px;
     grid-template-rows: 50px;
-    * {
-      margin: 0 1rem;
-    }
-    button {
-      color: #fff;
-      background-color: #0d6efd;
-      border-color: #0d6efd;
-      cursor: pointer;
-      &.copied {
-        font-family: "Consolas";
-        letter-spacing: 1px;
-        background-color: purple;
-        border-color: rgb(150, 15, 150);
-      }
+  }
+  * {
+    margin: 0 1rem;
+  }
+  button {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    cursor: pointer;
+    &.copied {
+      font-family: "Consolas";
+      letter-spacing: 1px;
+      background-color: purple;
+      border-color: rgb(150, 15, 150);
     }
   }
 }
