@@ -1,6 +1,5 @@
 <template>
   <HeaderTemplate />
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
   <MainDiv />
   <FooterTemplate />
 </template>
