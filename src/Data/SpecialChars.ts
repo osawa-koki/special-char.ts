@@ -136,7 +136,7 @@ const specialCharList: specialCharStruct[] = [
     id: 205,
     content: "λ",
     title: "ラムダ",
-    description: " (ギリシア文字)",
+    description: "ラムダ (ギリシア文字)",
     category: [SpecialCharType.symbol],
   },
   {
